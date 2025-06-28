@@ -20,6 +20,10 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'your_super_secret_key_here')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///casinofound.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+@app.route('/')
+def home():
+    return 'CasinoFound backend funcionando!'
+
 # Configurar CORS para permitir requisições do frontend
 CORS(app, origins="*")
 
